@@ -344,10 +344,6 @@ nav ul li a:hover {
   padding-right: 14px;
 }
 
-#countries {
-  /* keep section padding */
-}
-
 #countries .country h3 {
   font-size: 14px;
   text-transform: uppercase;
@@ -389,17 +385,9 @@ nav ul li a:hover {
   max-width: 340px;
 }
 
-#countries {
-  /* wrapper grid */
-}
+
 #countries {
   display: block;
-}
-#countries {
-  /* create grid using a helper: wrap cards by targeting direct children */
-}
-#countries {
-  /* nothing */
 }
 
 /* grid hack: since .country are inside same section, turn section into grid after the title */
