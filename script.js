@@ -1,3 +1,11 @@
+// always go to top on refresh/reload
+history.scrollRestoration = "manual";
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+  location.hash = "#home";
+});
+
+
 const headerHeight = document.querySelector("header").offsetHeight;
 
 /* reusable smooth scroll function */
@@ -32,3 +40,7 @@ if (getInTouchBtn) {
     smoothScrollTo("#contact");
   });
 }
+
+
+
+

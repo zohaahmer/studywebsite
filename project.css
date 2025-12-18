@@ -1,3 +1,4 @@
+
 /* project.css */
 
 /* =============== base =============== */
@@ -5,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 :root {
@@ -37,7 +39,13 @@ section {
 }
 
 /* =============== header (sticky white bar) =============== */
+.logo img {
+  height: 38px;        /* navbar ke liye perfect */
+  width: auto;
+  display: block;
+}
 header {
+  
   background: #ffffff;
   position: sticky;
   top: 0;
@@ -52,12 +60,15 @@ header {
   gap: 14px;
 }
 
+
 header h1 {
   font-size: 24px;
   letter-spacing: 1px;
   color: var(--blue);
   font-weight: 800;
 }
+
+
 
 nav ul {
   list-style: none;
@@ -196,11 +207,43 @@ nav ul li a:hover {
   font-size: 16.5px;
 
 }
+.about-box {
+  max-width: 900px;
+  margin: 24px auto 0;
+  padding: 26px 32px;
+  border-radius: 16px;
+
+  background: linear-gradient(180deg, #eef4fb 0%, #dfeaf5 100%);
+  box-shadow: 0 14px 30px rgba(16, 24, 40, 0.06);
+  text-align: left;
+}
+
+
+
+
+/* paragraphs inside box */
+.about-box p {
+  margin: 0 0 0;
+  padding: 0;
+  text-align: justify;     /* ✅ JUSTIFY */
+  text-justify: inter-word;
+  color: #374151;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+
 
 /* =============== services =============== */
 #services {
-  background: linear-gradient(180deg, #eef4fb 0%, #dfeaf5 100%);
+  position: relative;
+  background-image: url("passport.png"); /* your image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
 }
+
 
 #services h2 {
   text-align: center;
@@ -252,6 +295,14 @@ nav ul li a:hover {
 #countries {
   background: #ffffff;
 }
+#countries .country img {
+  width: 100%;
+  height: 200px;        /* width ≈ height → square look */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
 
 #countries h2 {
   text-align: center;
@@ -293,10 +344,6 @@ nav ul li a:hover {
   padding-right: 14px;
 }
 
-#countries {
-  /* keep section padding */
-}
-
 #countries .country h3 {
   font-size: 14px;
   text-transform: uppercase;
@@ -321,15 +368,7 @@ nav ul li a:hover {
   font-size: 13px;
 }
 
-/* fake image area on top of each card (since HTML has no <img>) */
-#countries .country::before {
-  content: "";
-  display: block;
-  height: 110px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #cfe2f6, #e9f1fb);
-  border: 1px solid rgba(229, 231, 235, 0.9);
-}
+
 
 /* make all country cards sit in a grid */
 #countries {
@@ -346,17 +385,9 @@ nav ul li a:hover {
   max-width: 340px;
 }
 
-#countries {
-  /* wrapper grid */
-}
+
 #countries {
   display: block;
-}
-#countries {
-  /* create grid using a helper: wrap cards by targeting direct children */
-}
-#countries {
-  /* nothing */
 }
 
 /* grid hack: since .country are inside same section, turn section into grid after the title */
@@ -418,17 +449,21 @@ nav ul li a:hover {
   position: relative;
 }
 
-/* round “photo” placeholder */
-.team-member::before {
-  content: "";
-  display: block;
+.avatar {
   width: 72px;
   height: 72px;
-  margin: 6px auto 12px auto;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 22px;
+  color: #ffffff;
+  margin: 6px auto 12px;
   border: 2px solid rgba(255, 255, 255, 0.35);
 }
+
 
 .team-member h4 {
   font-size: 15px;
@@ -701,21 +736,70 @@ nav ul li a:hover {
   transform: translateY(-2px);
 }
 
-/* 12) SECTION fade-in on scroll (pure CSS, modern browsers) */
-@supports (animation-timeline: view()) {
-  section, 
-  #countries .country, 
-  .team-member, 
-  #services ul li {
-    animation: fadeSlide linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 35%;
-  }
 
-  @keyframes fadeSlide {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
+
+/* ===== HERO TEXT SLIDE FROM LEFT ===== */
+
+#home h2,
+#home p,
+#home strong {
+  opacity: 0;
+  transform: translateX(-60px);
+  animation: slideFromLeft 0.9s ease forwards;
+}
+
+/* delays for better effect */
+#home h2 {
+  animation-delay: 0.2s;
+}
+
+#home p {
+  animation-delay: 0.45s;
+}
+
+#home p strong {
+  display: inline-block;
+  animation-delay: 0.7s;
+}
+
+@keyframes slideFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
+/* ===== HERO BUTTON SCALE-IN ===== */
+
+#home button {
+  opacity: 0;
+  transform: scale(0.85);
+  animation: scaleIn 0.6s ease forwards;
+  animation-delay: 0.9s; /* text ke baad aaye */
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+header .logo,
+header .logo img {
+  animation: logoScale 0.5s ease-out both;
+}
+
+@keyframes logoScale {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 
 

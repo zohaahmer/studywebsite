@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visacons – Study Abroad Made Simple</title>
     <link rel="stylesheet" href="project.css">
-    <script src="script.js" defer></script>
+    
 </head>
 <body>
-
+    
     <header>
-        <h1>VISACONS</h1>
+        <div class="logo">
+             <img src="logo.png" alt="Visacons Logo">
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -30,16 +32,29 @@
         <p>We guide you every step of the way — from choosing the right country and university to visa processing and beyond. Your global education journey starts with us.</p>
         <p><strong>BRITISH COUNCIL CERTIFIED AGENTS</strong></p>
         <button>Get In Touch</button>
+
     </section>
 
     <hr>
 
     <section id="about">
-        <h2>About Us</h2>
-        <h3>Why Choose Visacons?</h3>
-        <p>Personalized. Seamless. Reliable.</p>
-        <p>In a world full of opportunities, we understand it is difficult to make a choice. At VISACONS, our counsellors are well-qualified to guide you throughout.</p>
-    </section>
+  <h2>Why Choose Visacons?</h2>
+
+  <div class="about-box">
+    <p>
+      At <strong>VISACONS</strong>, we make the study abroad process simple and clear for students.
+      With many international education options available, choosing the right country and
+      university can be challenging. Our goal is to guide students with honest advice and
+      accurate information. <br> We assist students from selecting suitable study destinations to understanding visa
+      requirements and preparing essential documents. As students ourselves, we understand
+      the concerns involved in planning education abroad and provide guidance accordingly.
+
+    </p>
+
+    
+  </div>
+</section>
+
 
     <hr>
 
@@ -65,6 +80,7 @@
 
         <div class="country">
             <h3>Australia</h3>
+            <img src="australia.png" alt="Australia">
             <p><strong>Budget:</strong> AUD 13,000 to 25,000</p>
             <ul>
                 <li>Globally Recognized Qualifications</li>
@@ -75,6 +91,7 @@
 
         <div class="country">
             <h3>United Kingdom</h3>
+            <img src="uk.png" alt="UK">
             <p><strong>Budget:</strong> GBP 6,000 to 13,000</p>
             <ul>
                 <li>Ranked in Top 10 Universities in the World</li>
@@ -85,6 +102,7 @@
 
         <div class="country">
             <h3>Canada</h3>
+            <img src="canada.jpg" alt="canada">
             <p><strong>Budget:</strong> CAD 15,000 to 30,000</p>
             <ul>
                 <li>Affordable Quality Education</li>
@@ -94,6 +112,7 @@
 
         <div class="country">
             <h3>USA</h3>
+            <img src="america.png" alt="America">
             <p><strong>Budget:</strong> USD 15,000 to 30,000</p>
             <ul>
                 <li>Top Ranked Universities</li>
@@ -101,17 +120,25 @@
             </ul>
         </div>
 
-        <div class="country">
-            <h3>Ireland</h3>
-            <p>Budget: € 12,000 to 28,000</p>
-        </div>
+       
         <div class="country">
             <h3>Germany</h3>
-            <p>Budget: € 12,000 to 20,000 (Free Education in Public Universities)</p>
+            <img src="germany.png" alt="germany">
+            <p><strong>Budget:</strong> € 12,000 to 20,000</p>
+            <ul>
+                <li>No tuition fees at public universities</li>
+                <li>Part-time work opportunities for students</li>
+            </ul> 
         </div>
+
          <div class="country">
             <h3>Malaysia</h3>
-            <p>Budget: USD 6,800 to 8,000</p>
+            <img src="malaysia.jpg" alt="Malaysia">
+            <p><strong>Budget:</strong> USD 6,800 to 8,000</p>
+            <ul>
+                <li>Affordable tuition and living costs</li>
+                <li>Growing Asian education hub</li>
+            </ul>
         </div>
     </section>
 
@@ -120,25 +147,30 @@
     <section id="team">
         <h2>Meet Our Team</h2>
         
-        <div class="team-member">
-            <h4>Minhaj Khan</h4>
-            <p>Executive Director (Cambridge Examiner)</p>
-        </div>
+       <div class="team-member">
+        <div class="avatar">AI</div>
+  <h4>Afra Iqbal</h4>
+  <p>Student Visa Research Coordinator</p>
+</div>
 
-        <div class="team-member">
-            <h4>Zoha Ahmer</h4>
-            <p>Director Counselling</p>
-        </div>
+<div class="team-member">
+    <div class="avatar">ZA</div>
+  <h4>Zoha Ahmer</h4>
+  <p>Study Abroad Guidance Associate</p>
+</div>
 
-        <div class="team-member">
-            <h4>Afra Iqbal</h4>
-            <p>Director Operations</p>
-        </div>
+<div class="team-member">
+    <div class="avatar">MH</div>
+  <h4>Minhaj Habib</h4>
+  <p>Documentation & Application Assistant</p>
+</div>
 
-        <div class="team-member">
-            <h4>Vivek Kumar</h4>
-            <p>System Coordinator</p>
-        </div>
+<div class="team-member">
+    <div class="avatar">VK</div>
+  <h4>Vivek Kumar</h4>
+  <p>Student Outreach & Support Coordinator</p>
+</div>
+
     </section>
 
     <hr>
@@ -146,26 +178,29 @@
     <section id="contact">
         <h2>Get In Touch</h2>
         <p><strong>Address:</strong> FL - 3/11, Block 5, Gulshan-e-Iqbal, Rashid Minhas Road, Karachi, Pakistan</p>
-        <p><strong>Phone:</strong> 0337-2834953 / 0337-2406286</p>
-        <p><strong>Email:</strong> info@visacons.com</p>
-        
-        <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br><br>
-            
-            <label for="phone">WhatsApp Number:</label><br>
-            <input type="text" id="phone" name="phone"><br><br>
-            
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message"></textarea><br><br>
-            
-            <input type="submit" value="Submit">
-        </form>
+        <p><strong>Phone:</strong> 0332-7875195</p>
+        <p><strong>Email:</strong> afraiqbal2022@gmail.com</p>
+      <form class="contact-form"action="https://formspree.io/f/xbdrrwob" method="POST">
+       
+
+ <label for="name">Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="phone">WhatsApp Number</label>
+  <input type="text" id="phone" name="phone" required>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" required></textarea>
+
+  <input type="hidden" name="_subject" value="New message from VISACONS website">
+
+  <input type="submit" value="Submit">
+</form>
     </section>
 
     <footer>
         <p>&copy; 2025 Visacons. All Rights Reserved.</p>
     </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
