@@ -1,12 +1,7 @@
-
-/* project.css */
-
-/* =============== base =============== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 :root {
@@ -31,44 +26,30 @@ body {
 }
 
 hr {
-  display: none; /* image layout doesn't show separators */
+  display: none; 
 }
 
 section {
   padding: 60px 14px;
 }
 
-/* =============== header (sticky white bar) =============== */
 .logo img {
-  height: 38px;        /* navbar ke liye perfect */
+  height: 38px;       
   width: auto;
   display: block;
 }
+
 header {
-  
   background: #ffffff;
   position: sticky;
   top: 0;
   z-index: 999;
   padding: 14px 18px;
-  border-bottom: 1px solid var(--line);
-  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
 }
-
-
-header h1 {
-  font-size: 24px;
-  letter-spacing: 1px;
-  color: var(--blue);
-  font-weight: 800;
-}
-
-
 
 nav ul {
   list-style: none;
@@ -85,7 +66,6 @@ nav ul li a {
   font-size: 15px;
   padding: 10px 10px;
   border-radius: 999px;
-  transition: 0.2s ease;
 }
 
 nav ul li a:hover {
@@ -93,7 +73,6 @@ nav ul li a:hover {
   color: var(--blue);
 }
 
-/* =============== home (hero) =============== */
 #home {
   background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 55%, var(--blue-deep) 100%);
   color: #ffffff;
@@ -102,7 +81,6 @@ nav ul li a:hover {
   overflow: hidden;
 }
 
-/* right big circle like image */
 #home::after {
   content: "";
   position: absolute;
@@ -114,7 +92,6 @@ nav ul li a:hover {
   background: rgba(255, 255, 255, 0.14);
 }
 
-/* inner container feel */
 #home h2,
 #home p,
 #home button {
@@ -133,7 +110,6 @@ nav ul li a:hover {
 #home p {
   color: rgba(255, 255, 255, 0.88);
   margin-bottom: 10px;
-  font-size: 15px;
   font-size: 16.5px;
 
 }
@@ -145,12 +121,13 @@ nav ul li a:hover {
   letter-spacing: 0.5px;
 }
 
+#home {--home-max: 640px; }
+
 #home button {
   margin-top: 16px;
   background: var(--yellow);
   border: none;
   color: #111827;
-  padding: 12px 18px;
   font-weight: 800;
   border-radius: 6px;
   cursor: pointer;
@@ -159,22 +136,12 @@ nav ul li a:hover {
   margin-right: auto;
   font-size: 16px;
   padding: 14px 22px;
-
 }
-/* ============================= */
-
 
 #home button:hover {
-  transform: translateY(-1px);
-  filter: brightness(0.97);
+  filter: brightness(0.90);
 }
-/* ======================our edit=========== */
-/* ✅ button ko same left line par laane ke liye (under British Council) */
-#home { --home-max: 640px; }
 
-
-
-/* =============== about =============== */
 #about {
   background: #ffffff;
   text-align: center;
@@ -188,62 +155,33 @@ nav ul li a:hover {
   font-size: 32px;
 }
 
-#about h3 {
-  font-size: 28px;
-  font-weight: 900;
-  margin-bottom: 8px;
-}
-
-#about p:nth-of-type(1) {
-  color: var(--muted);
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-#about p:nth-of-type(2) {
-  max-width: 760px;
-  margin: 0 auto;
-  color: #374151;
-  font-size: 16.5px;
-
-}
 .about-box {
   max-width: 900px;
   margin: 24px auto 0;
   padding: 26px 32px;
   border-radius: 16px;
-
   background: linear-gradient(180deg, #eef4fb 0%, #dfeaf5 100%);
   box-shadow: 0 14px 30px rgba(16, 24, 40, 0.06);
   text-align: left;
 }
 
-
-
-
-/* paragraphs inside box */
 .about-box p {
-  margin: 0 0 0;
-  padding: 0;
-  text-align: justify;     /* ✅ JUSTIFY */
-  text-justify: inter-word;
-  color: #374151;
-  font-size: 16px;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: justify;
   line-height: 1.7;
+  color: #5e6775;
+  font-size: 16px;
+  font-weight: 600; 
 }
 
-
-
-
-/* =============== services =============== */
 #services {
   position: relative;
-  background-image: url("passport.png"); /* your image */
+  background-image: url("passport.png"); 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
 }
-
 
 #services h2 {
   text-align: center;
@@ -254,55 +192,51 @@ nav ul li a:hover {
   font-size: 32px;
 }
 
-#services > p {
+#services p {
   text-align: center;
   color: #374151;
   margin-bottom: 26px;
 }
 
-/* numbered list like 01, 02 ... */
-#services ul {
-  list-style: none;
+#services ol {
   max-width: 820px;
   margin: 0 auto;
   display: grid;
   gap: 10px;
-  counter-reset: service;
+  padding-left: 52px; 
 }
 
-#services ul li {
-  counter-increment: service;
+#services ol li {
   background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(229, 231, 235, 0.9);
   border-radius: 10px;
   padding: 14px 14px 14px 52px;
   position: relative;
   font-weight: 700;
   color: #1f2937;
+  transition: transform 0.15s ease-out, filter 0.15s ease-out;
+  cursor: pointer;
 }
 
-#services ul li::before {
-  content: counter(service, decimal-leading-zero);
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
+#services ol li:hover {
+  transform: translateY(-2px); 
+  filter: brightness(0.90);     
+}
+
+#services ol li::marker {
   font-weight: 900;
   color: var(--blue);
 }
 
-/* =============== countries (card grid) =============== */
 #countries {
   background: #ffffff;
 }
 #countries .country img {
   width: 100%;
-  height: 200px;        /* width ≈ height → square look */
+  height: 200px;        
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
 }
-
 
 #countries h2 {
   text-align: center;
@@ -321,11 +255,6 @@ nav ul li a:hover {
   margin: 0 auto 14px auto;
 }
 
-/* turn your country divs into a responsive grid */
-#countries {
-  display: block;
-}
-
 #countries .country {
   background: var(--card);
   border: 1px solid var(--line);
@@ -334,14 +263,8 @@ nav ul li a:hover {
   box-shadow: 0 10px 22px rgba(16, 24, 40, 0.06);
 }
 
-/* layout as grid (wrap all cards) */
-#countries .country {
-  width: 100%;
-}
-
 #countries {
-  padding-left: 14px;
-  padding-right: 14px;
+  padding: 0 14px;
 }
 
 #countries .country h3 {
@@ -356,10 +279,8 @@ nav ul li a:hover {
 
 #countries .country p {
   color: #374151;
-  font-size: 13px;
   margin-bottom: 10px;
   font-size: 16.5px;
-
 }
 
 #countries .country ul {
@@ -368,67 +289,38 @@ nav ul li a:hover {
   font-size: 13px;
 }
 
-
-
-/* make all country cards sit in a grid */
 #countries {
   background: #ffffff;
-}
-#countries > h2 {
-  margin-bottom: 22px;
-}
-#countries {
   position: relative;
+}
+
+#countries h2 {
+  margin-bottom: 22px;
 }
 
 #countries .country {
   max-width: 340px;
 }
 
-
-#countries {
-  display: block;
-}
-
-/* grid hack: since .country are inside same section, turn section into grid after the title */
-#countries {
-  text-align: center;
-}
-#countries h2 {
-  text-align: center;
-}
 #countries {
   text-align: left;
-}
-#countries {
-  /* grid */
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   align-items: stretch;
   justify-items: stretch;
+  padding-top: 70px;
+  padding-bottom: 70px
 }
 
-/* keep title spanning full width */
 #countries h2 {
+  text-align: center;
   grid-column: 1 / -1;
 }
 
-/* =============== team (dark blue strip with cards) =============== */
 #team {
   background: linear-gradient(180deg, #0f4f86 0%, #0b3f6a 100%);
   color: #ffffff;
-}
-
-#team h2 {
-  text-align: center;
-  font-weight: 900;
-  margin-bottom: 28px;
-  letter-spacing: 0.5px;
-}
-
-/* grid the team members */
-#team {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
@@ -436,6 +328,10 @@ nav ul li a:hover {
 }
 
 #team h2 {
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: 28px;
+  letter-spacing: 0.5px;
   grid-column: 1 / -1;
   font-size: 32px;
 }
@@ -464,7 +360,6 @@ nav ul li a:hover {
   border: 2px solid rgba(255, 255, 255, 0.35);
 }
 
-
 .team-member h4 {
   font-size: 15px;
   font-weight: 900;
@@ -476,7 +371,6 @@ nav ul li a:hover {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* =============== contact (light gray + centered form) =============== */
 #contact {
   background: var(--section);
 }
@@ -520,7 +414,6 @@ nav ul li a:hover {
   padding: 10px 10px;
   margin-top: 6px;
   font-size: 14px;
-  outline: none;
 }
 
 #contact textarea {
@@ -545,10 +438,9 @@ nav ul li a:hover {
 }
 
 #contact input[type="submit"]:hover {
-  filter: brightness(0.95);
+  filter: brightness(0.90);
 }
 
-/* =============== footer =============== */
 footer {
   background: #0b3a63;
   color: rgba(255, 255, 255, 0.85);
@@ -557,7 +449,7 @@ footer {
   font-size: 13px;
 }
 
-/* =============== responsive =============== */
+/*responsiveness*/
 @media (max-width: 1050px) {
   #countries {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -590,11 +482,9 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-/* =========================================================
-   PURE CSS ANIMATIONS — ADD AT END ONLY
-   ========================================================= */
 
-/* 1) NAV LINK underline animation */
+/*animations*/
+/*1)*/
 nav ul li a {
   position: relative;
 }
@@ -617,95 +507,7 @@ nav ul li a:hover::after {
   transform: scaleX(1);
 }
 
-/* 2) NAV underline stays on click (PURE CSS using :target) */
-@supports selector(body:has(#home:target)) {
-  body:has(#home:target) nav a[href="#home"]::after,
-  body:has(#about:target) nav a[href="#about"]::after,
-  body:has(#services:target) nav a[href="#services"]::after,
-  body:has(#countries:target) nav a[href="#countries"]::after,
-  body:has(#team:target) nav a[href="#team"]::after,
-  body:has(#contact:target) nav a[href="#contact"]::after {
-    transform: scaleX(1);
-  }
-}
-
-/* 3) NAV hover pulse */
-nav ul li a:hover {
-  animation: navPulse 0.35s ease;
-}
-
-@keyframes navPulse {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-1px); }
-  100% { transform: translateY(0); }
-}
-
-/* 4) HERO button hover lift */
-#home button {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
-}
-
-#home button:hover {
-  transform: translateY(-2px);
-}
-
-/* 5) HERO button press animation */
-#home button:active {
-  transform: scale(0.97);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-/* 6) HERO button ripple (CSS only, center ripple) */
-#home button {
-  position: relative;
-  overflow: hidden;
-}
-
-#home button::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 10px;
-  height: 10px;
-  background: rgba(255,255,255,0.6);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
-}
-
-#home button:active::before {
-  animation: ripple 0.6s ease;
-}
-
-@keyframes ripple {
-  0% { transform: translate(-50%, -50%) scale(0); opacity: 0.8; }
-  100% { transform: translate(-50%, -50%) scale(22); opacity: 0; }
-}
-
-/* 7) SERVICES hover lift + glow */
-#services ul li {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-#services ul li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 26px rgba(16,24,40,0.15);
-}
-
-/* 8) SERVICES click enlarge + glow (pure CSS) */
-#services ul li:active {
-  animation: serviceGlow 0.45s ease;
-}
-
-@keyframes serviceGlow {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); box-shadow: 0 0 18px rgba(247,181,0,0.6); }
-  100% { transform: scale(1); }
-}
-
-/* 9) COUNTRY cards hover lift */
+/* 2)*/
 #countries .country {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -715,7 +517,7 @@ nav ul li a:hover {
   box-shadow: 0 18px 40px rgba(16,24,40,0.14);
 }
 
-/* 10) TEAM cards hover lift */
+/* 3)*/
 .team-member {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -725,21 +527,7 @@ nav ul li a:hover {
   box-shadow: 0 18px 36px rgba(0,0,0,0.22);
 }
 
-/* 11) CONTACT inputs focus animation */
-#contact input,
-#contact textarea {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-#contact input:focus,
-#contact textarea:focus {
-  transform: translateY(-2px);
-}
-
-
-
-/* ===== HERO TEXT SLIDE FROM LEFT ===== */
-
+/*4)*/
 #home h2,
 #home p,
 #home strong {
@@ -748,7 +536,6 @@ nav ul li a:hover {
   animation: slideFromLeft 0.9s ease forwards;
 }
 
-/* delays for better effect */
 #home h2 {
   animation-delay: 0.2s;
 }
@@ -768,13 +555,13 @@ nav ul li a:hover {
     transform: translateX(0);
   }
 }
-/* ===== HERO BUTTON SCALE-IN ===== */
 
+/*5)*/
 #home button {
   opacity: 0;
   transform: scale(0.85);
   animation: scaleIn 0.6s ease forwards;
-  animation-delay: 0.9s; /* text ke baad aaye */
+  animation-delay: 0.9s; 
 }
 
 @keyframes scaleIn {
@@ -784,7 +571,7 @@ nav ul li a:hover {
   }
 }
 
-
+/*6)*/
 header .logo,
 header .logo img {
   animation: logoScale 0.5s ease-out both;
@@ -800,6 +587,3 @@ header .logo img {
     opacity: 1;
   }
 }
-
-
-

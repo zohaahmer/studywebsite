@@ -1,14 +1,11 @@
-// always go to top on refresh/reload
 history.scrollRestoration = "manual";
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
   location.hash = "#home";
 });
 
-
 const headerHeight = document.querySelector("header").offsetHeight;
 
-/* reusable smooth scroll function */
 function smoothScrollTo(targetId) {
   const targetSection = document.querySelector(targetId);
   if (!targetSection) return;
@@ -24,7 +21,6 @@ function smoothScrollTo(targetId) {
   });
 }
 
-/* navbar links */
 document.querySelectorAll("nav a").forEach(link => {
   link.addEventListener("click", function (e) {
     e.preventDefault();
@@ -32,7 +28,6 @@ document.querySelectorAll("nav a").forEach(link => {
   });
 });
 
-/* ✅ Get In Touch button */
 const getInTouchBtn = document.querySelector("#home button");
 
 if (getInTouchBtn) {
@@ -40,7 +35,3 @@ if (getInTouchBtn) {
     smoothScrollTo("#contact");
   });
 }
-
-
-
-
